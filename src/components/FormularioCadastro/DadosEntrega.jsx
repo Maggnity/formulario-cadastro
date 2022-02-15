@@ -19,6 +19,7 @@ function DadosEntrega({Enviar}){
                 value={cep}
                 onChange={(event) => {setCep(event.target.value)}}
                 id="cep"
+                required
                 label="CEP"
                 type="number"
                 variant="outlined"
@@ -29,6 +30,7 @@ function DadosEntrega({Enviar}){
                 value={endereco}
                 onChange={(event) => {setEndereco(event.target.value)}}
                 id="endereco"
+                required
                 label="Endereço"
                 type="text"
                 variant="outlined"
@@ -40,6 +42,7 @@ function DadosEntrega({Enviar}){
                 onChange={(event) => {setNumero(event.target.value)}}
                 id="numero"
                 label="Número"
+                required
                 type="number"
                 variant="outlined"
                 fullWidth
@@ -48,6 +51,7 @@ function DadosEntrega({Enviar}){
             <TextField 
                 value={estado}
                 onChange={(event) => {setEstado(event.target.value)}}id="estado"
+                required
                 label="Estado"
                 type="text"
                 variant="outlined"
@@ -59,6 +63,7 @@ function DadosEntrega({Enviar}){
                 onChange={(event) => {setCidade(event.target.value)}}
                 id="cidade"
                 label="Cidade"
+                required
                 type="text"
                 variant="outlined"
                 fullWidth

@@ -3,6 +3,7 @@ import "./App.css";
 import FormularioCadastro from "./components/FormularioCadastro/FormularioCadastro";
 import { Container, Typography } from "@material-ui/core";
 import "fontsource-roboto";
+import {validarCPF, validarSenha} from "./Models/cadastro"
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
         <Typography variant="h3" align="center">
           Formulário de cadastro
         </Typography>
-        <FormularioCadastro Enviar={aoEnviarForm} validarCPF={validarCPF} />
+        <FormularioCadastro Enviar={aoEnviarForm} validacoes={{cpf:validarCPF, senha:validarSenha, nome:validarSenha}} />
       </Container>
     );
   }
@@ -21,12 +22,6 @@ function aoEnviarForm(dados){
   console.log(dados);
 }
 
-function validarCPF(cpf){
-  if(cpf.length !==11){
-    return {valido:false, texto:"CPF deve ter 11 dígitos."}
-  }else{
-    return {valido:true, texto:""}
-  }
-}
+
 
 export default App;
